@@ -4,10 +4,10 @@ import os;
 import sys;
 
 def copy(m):
-    command = 'echo ' + m.strip() + '| clip';
+    command = 'echo | set /p nul=' + m.strip() + '| clip'
     os.system(command);
 
 a = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ!#$%*+,-.:;?@_';
 pwd = ''.join(secrets.choice(a) for i in range(int(input("Length: "))));
-copy(pwd.replace("\n", ""));
+copy(pwd);
 sys.exit();
